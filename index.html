@@ -1,0 +1,204 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Сервис SMS-рассылок</title>
+    <style>
+        /* Общий стиль */
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+        body {
+            font-family: 'Arial', sans-serif;
+            background: linear-gradient(to bottom, #f9f9f9, #e0e0e0);
+            color: #333;
+        }
+        a {
+            text-decoration: none;
+            color: inherit;
+        }
+
+        /* Шапка сайта */
+        header {
+            background: linear-gradient(to right, #4CAF50, #3E8E41);
+            color: white;
+            padding: 20px 40px;
+            text-align: center;
+            box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+        }
+        header h1 {
+            font-size: 2.5em;
+            margin-bottom: 10px;
+        }
+        header p {
+            font-size: 1.2em;
+            opacity: 0.8;
+        }
+
+        /* Меню */
+        nav {
+            background: #333;
+            padding: 10px 0;
+            display: flex;
+            justify-content: center;
+            gap: 20px;
+        }
+        nav a {
+            color: white;
+            padding: 10px 20px;
+            border-radius: 5px;
+            transition: background 0.3s ease;
+        }
+        nav a:hover {
+            background: #575757;
+        }
+
+        /* Основной контент */
+        main {
+            padding: 40px 20px;
+            display: flex;
+            flex-direction: column;
+            gap: 40px;
+        }
+        .container {
+            max-width: 900px;
+            margin: 0 auto;
+            background: white;
+            border-radius: 12px;
+            padding: 20px;
+            box-shadow: 0 6px 12px rgba(0, 0, 0, 0.1);
+            transition: transform 0.2s ease, box-shadow 0.2s ease;
+        }
+        .container:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 10px 20px rgba(0, 0, 0, 0.15);
+        }
+        h2 {
+            color: #4CAF50;
+            margin-bottom: 10px;
+        }
+        p {
+            margin-bottom: 20px;
+            line-height: 1.6;
+        }
+
+        /* Формы */
+        .form-group {
+            margin-bottom: 20px;
+        }
+        .form-group label {
+            font-weight: bold;
+            display: block;
+            margin-bottom: 8px;
+        }
+        .form-group input, .form-group textarea {
+            width: 100%;
+            padding: 12px;
+            border: 1px solid #ccc;
+            border-radius: 5px;
+            font-size: 1em;
+        }
+        .form-group textarea {
+            resize: none;
+        }
+        button {
+            background: #4CAF50;
+            color: white;
+            border: none;
+            padding: 12px 20px;
+            font-size: 1em;
+            border-radius: 5px;
+            cursor: pointer;
+            transition: background 0.3s ease, transform 0.2s ease;
+        }
+        button:hover {
+            background: #3E8E41;
+            transform: translateY(-2px);
+        }
+
+        /* Подвал */
+        footer {
+            background: #333;
+            color: white;
+            text-align: center;
+            padding: 15px;
+            margin-top: 20px;
+            font-size: 0.9em;
+            box-shadow: 0 -4px 6px rgba(0, 0, 0, 0.1);
+        }
+
+        /* Адаптивность */
+        @media (max-width: 768px) {
+            header h1 {
+                font-size: 2em;
+            }
+            main {
+                padding: 20px;
+            }
+        }
+    </style>
+</head>
+<body>
+
+<header>
+    <h1>Сервис SMS-рассылок</h1>
+    <p>Простое решение для отправки сообщений вашим клиентам</p>
+</header>
+
+<nav>
+    <a href="#dashboard">Главная</a>
+    <a href="#contacts">Контакты</a>
+    <a href="#messages">Сообщения</a>
+    <a href="#analytics">Аналитика</a>
+</nav>
+
+<main>
+    <section id="dashboard" class="container">
+        <h2>Добро пожаловать!</h2>
+        <p>Этот сервис поможет вам быстро и удобно отправлять SMS-сообщения вашим клиентам. Убедитесь, что у вас есть список контактов и текст сообщения.</p>
+        <button onclick="alert('Здесь будет переход к отправке SMS')">Отправить SMS</button>
+    </section>
+
+    <section id="contacts" class="container">
+        <h2>Контакты</h2>
+        <p>Добавьте новых клиентов или загрузите список контактов.</p>
+        <form>
+            <div class="form-group">
+                <label for="name">Имя:</label>
+                <input type="text" id="name" placeholder="Введите имя">
+            </div>
+            <div class="form-group">
+                <label for="phone">Номер телефона:</label>
+                <input type="text" id="phone" placeholder="Введите номер телефона">
+            </div>
+            <button type="submit">Добавить контакт</button>
+        </form>
+    </section>
+
+    <section id="messages" class="container">
+        <h2>Отправка сообщений</h2>
+        <p>Введите текст сообщения и отправьте его вашим клиентам.</p>
+        <form>
+            <div class="form-group">
+                <label for="message">Сообщение:</label>
+                <textarea id="message" rows="5" placeholder="Введите текст сообщения"></textarea>
+            </div>
+            <button type="submit">Отправить</button>
+        </form>
+    </section>
+
+    <section id="analytics" class="container">
+        <h2>Аналитика</h2>
+        <p>Просматривайте статистику доставленных сообщений и эффективность вашей рассылки.</p>
+    </section>
+</main>
+
+<footer>
+    <p>© 2024 Сервис SMS-рассылок. Все права защищены.</p>
+</footer>
+
+</body>
+</html>
